@@ -70,7 +70,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <form id="form-signUp" class="md-float-material form-material" method="POST">
+                    <form id="form-signUp" class="md-float-material form-material" method="POST" action="<%= request.getContextPath()%>/signUp">
                         
                         <div class="auth-box card" style="box-shadow: 2px 2px 30px #888888;">
                             <div class="card-block">

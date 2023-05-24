@@ -192,8 +192,6 @@ inputConfirmPassword.addEventListener('blur', () => {
 
 signUpButton.addEventListener('click', () => {
 	if (nameValited && lastNameValited && dayValited && monthValited && yearValited && emailValited && passwordValited &&confirmPasswordValited) {
-	let formValited = document.querySelector('#form-signUp');
-	formValited.setAttribute('method', "#");
 	signUpButton.setAttribute('type', "submit");
 	
 	console.log(formValited);
