@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Our TodoList - Login</title>
+	<title>Our TodoList - Sign Up</title>
 	<jsp:include page="/structure-pages/structure-head.jsp"></jsp:include>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/signUp-validation.js" defer></script>
 </head>

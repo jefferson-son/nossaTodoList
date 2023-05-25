@@ -1,11 +1,14 @@
 package com.nossaTodoList.servlets;
 
+import java.io.IOException;
+
+import com.nossaTodoList.model.User;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/signUp"})
 public class signUpController extends HttpServlet {
@@ -22,7 +25,25 @@ public class signUpController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 		
-		System.out.println("Caiu na servlet");
+		String name = request.getParameter("name");
+		String lastName = request.getParameter("lastName");
+		String day = request.getParameter("day");
+		String month = request.getParameter("month");
+		String year = request.getParameter("year");
+		String birthDate = day + "/" + month + "/" + year;
+		String gender = request.getParameter("gender");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		User user = new User();
+		user.setName(name);
+		user.setLastName(lastName);
+		user.setBirthDate(birthDate);
+		user.setGender(gender);
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		System.out.println(user);
 	}
 	
 }
