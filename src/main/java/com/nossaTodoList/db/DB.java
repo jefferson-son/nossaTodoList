@@ -1,52 +1,46 @@
 package com.nossaTodoList.db;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 import com.nossaTodoList.db.exceptions.DbExceptions;
 
-public class DB implements Serializable{
+public class DB implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	private static Connection conn = null;
 
-	// 1 - Carregamento das propriedades de conexão
-	public static Properties loadProperties() {
-		try(FileInputStream fs = new FileInputStream("db.properties")) {
-			Properties props = new Properties();
-			props.load(fs);
-			return props;
-		}
-		catch(IOException e) {
-			throw new DbExceptions("Erro ao carregar propriedades de conexão: " + e.getMessage());
-		}
-	}
-	
-	public static Connection getConnection() {
-		if(conn == null) {
-			try {
-				Properties props = loadProperties();
-				String url = props.getProperty("dburl");
-				conn = DriverManager.getConnection(url, props);
-			}
-			catch(SQLException e) {
-				throw new DbExceptions("Erro ao connectar: " + e.getMessage());
+	private static Connection conn = null;
+	private static String url = "jdbc:postgresql://localhost:5432/nossaTodoList?autoReconnect=true";
+	private static String user = "postgres";
+	private static String password = "desenvolvimento";
+
+	public static Connection getConnection(){
+		try {
+			if(conn == null) {
+				try {
+					Class.forName("org.postgresql.Driver");
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+				conn = DriverManager.getConnection(url, user, password);
+				conn.setAutoCommit(false);
 			}
 		}
+		catch(SQLException e) {
+			throw new DbExceptions("Erro ao realizar conexão com banco de dados: " + e.getMessage());
+		}
+		
 		return conn;
 	}
+
+	
 	
 	public static Connection closeConnection() {
-		if(conn != null) {
+		if (conn != null) {
 			try {
 				conn.close();
-			}
-			catch(SQLException e) {
+			} catch (SQLException e) {
 				throw new DbExceptions("Erro ao fechar conexão: " + e.getMessage());
 			}
 		}

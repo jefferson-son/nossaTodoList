@@ -6,6 +6,8 @@
 	<meta charset="UTF-8">
 	<title>Our TodoList - Sign Up</title>
 	<jsp:include page="/structure-pages/structure-head.jsp"></jsp:include>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style-signUp.css">
+	<script src="https://kit.fontawesome.com/a794d3b9e8.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/signUp-validation.js" defer></script>
 </head>
 <body themebg-pattern="theme1">
@@ -70,6 +72,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
+                
                     <form id="form-signUp" class="md-float-material form-material" method="POST" action="<%= request.getContextPath()%>/signUp">
                         
                         <div class="auth-box card" style="box-shadow: 2px 2px 30px #888888;">
@@ -82,6 +85,7 @@
                                         <h3 class="text-center txt-primary">Cadastre-se</h3>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group form-primary">
                                     <input type="text" name="name" class="form-control name" required="required">
                                     <span class="form-bar"></span>
@@ -118,11 +122,11 @@
                                 	<p style="font-size: 14px;">Gênero</p>
                                 	<div class="form-group text-center form-row" style="justify-content: start;">
 	                                	<div class="col-sm-4 col-4">
-										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="feminino">
+										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Feminino">
 										  <label class="form-check-label" for="inlineRadio1" style="padding-left: 0px;">Feminino</label>
 										</div>
 										<div class="col-sm-4 col-4">
-										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="masculino">
+										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Masculino">
 										  <label class="form-check-label" for="inlineRadio1" style="padding-left: 0px;">Masculino</label>
 										</div>
 										<div class="col-sm-4 col-4">
@@ -143,6 +147,11 @@
                                     <div class="col-sm-6">
                                         <div class="form-group form-primary">
                                             <input type="password" id="password" name="password" class="form-control" required="required">
+                                           
+                                            <span id="visualized-password">
+                                            	<i class="fa-solid fa-eye" id="icon-pass"></i>
+                                            </span>
+                                           
                                             <span class="form-bar"></span>
                                             <label class="float-label password-label">Senha</label>
                                         </div>
@@ -151,6 +160,11 @@
                                     <div class="col-sm-6">
                                         <div class="form-group form-primary">
                                             <input type="password" id="confirm-password" name="confirm-password" class="form-control" required="required">
+                                            
+                                            <span id="visualized-confirmPassword">
+                                            	<i class="fa-solid fa-eye" id="icon-confirmPass"></i>
+                                            </span>
+                                            	
                                             <span class="form-bar"></span>
                                             <label class="float-label confirmPassword-label">Confirmar senha</label>
 	                                        </div>
@@ -172,6 +186,10 @@
 	                                        <button type="button" id="signUpButton" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Cadastrar</button>
 	                                    </div>
 	                                </div>
+	                                
+	                                <div>
+	                                	<p style="font-size: 10px; font-weight:500; color: #455a64;">Ao clicar em Cadastre-se, você concorda com nossos <a href="#" style="color: #69a1ff; font-size: 10px;">Termos, Política de Privacidade</a> e <a href="#" style="color: #69a1ff; font-size: 10px;">Política de Cookies</a>. Você poderá receber notificações por SMS e cancelar isso quando quiser.</p>
+	                                </div>
                             </div>
                         </div>
                     </form>
@@ -182,8 +200,6 @@
         </div>
         <!-- end of container-fluid -->
     </section>
-
-
 
 <!-- Required Jquery -->
 <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>     <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>     <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>     <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js "></script>

@@ -8,6 +8,12 @@ let inputPassword = document.querySelector('#password')
 let inputConfirmPassword = document.querySelector('#confirm-password');
 let signUpButton = document.querySelector('#signUpButton');
 
+let visualizedPassword = document.querySelector('#visualized-password');
+let visualizedConfirmPassword = document.querySelector('#visualized-confirmPassword');
+let password = document.querySelector('#password');
+let confirmPassword = document.querySelector('#confirm-password');
+
+
 let nameValited;
 let lastNameValited;
 let dayValited;
@@ -198,5 +204,33 @@ signUpButton.addEventListener('click', () => {
 	}
 	else{
 		console.log("Todos os campos devem ser preenchidos");
+	}
+})
+
+visualizedPassword.addEventListener('click',() => {
+	
+	let eye = document.querySelector('#icon-pass');
+	
+	if(eye.getAttribute('class') == 'fa-solid fa-eye'){
+		eye.setAttribute('class', 'fa-solid fa-eye-slash');
+		password.setAttribute('type', 'text');
+	}
+	else if(eye.getAttribute('class') == 'fa-solid fa-eye-slash'){
+		eye.setAttribute('class', 'fa-solid fa-eye');
+		password.setAttribute('type', 'password');
+	}
+})
+
+visualizedConfirmPassword.addEventListener('click',() => {
+	
+	let eye = document.querySelector('#icon-confirmPass');
+	
+	if(eye.getAttribute('class') == 'fa-solid fa-eye'){
+		eye.setAttribute('class', 'fa-solid fa-eye-slash');
+		confirmPassword.setAttribute('type', 'text');
+	}
+	else if(eye.getAttribute('class') == 'fa-solid fa-eye-slash'){
+		eye.setAttribute('class', 'fa-solid fa-eye');
+		confirmPassword.setAttribute('type', 'password');
 	}
 })
