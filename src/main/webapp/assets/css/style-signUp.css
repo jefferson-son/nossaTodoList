@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.fa-eye {
+	cursor: pointer;
+	position: absolute;
+	color: #455a64;
+	position: absolute; 
+	right: 5px; 
+	top: 20px;
+}
+
+.fa-eye-slash {
+	cursor: pointer;
+	position: absolute;
+	color: #455a64;
+	position: absolute; 
+	right: 5px; 
+	top: 20px;
+}
