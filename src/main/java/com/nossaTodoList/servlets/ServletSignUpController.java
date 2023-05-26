@@ -51,6 +51,7 @@ public class ServletSignUpController extends HttpServlet {
 			request.setAttribute("msg", "Cadastro realizado com sucesso!");
 			request.getRequestDispatcher("/sign-up.jsp").forward(request, response);
 		}
+		
 	}
 	
 }

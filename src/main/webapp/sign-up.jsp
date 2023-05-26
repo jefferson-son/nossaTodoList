@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style-signUp.css">
 	<script src="https://kit.fontawesome.com/a794d3b9e8.js" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/signUp-validation.js" defer></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/modalSignUp.js" defer></script>
 </head>
 <body themebg-pattern="theme1">
 
@@ -200,6 +201,26 @@
         </div>
         <!-- end of container-fluid -->
     </section>
+	
+	<!-- Modal após cadastro realizado com sucesso -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	      	<h6> </h6>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <p class="responseSignUp text-center" style="font-size: 18px;">${msg}</p>
+	      </div>
+	      <div class="modal-footer">
+	        <a href="<%= request.getContextPath()%>/login.jsp" class="btn btn-primary">Login</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 <!-- Required Jquery -->
 <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>     <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>     <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>     <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js "></script>
@@ -215,5 +236,7 @@
 <script type="text/javascript" src="bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
 <script type="text/javascript" src="bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 <script type="text/javascript" src="assets/js/common-pages.js"></script>
+<script type="text/javascript">
+</script>
 </body>
 </html>
