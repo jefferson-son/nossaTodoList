@@ -189,7 +189,7 @@
 	                                </div>
 	                                
 	                                <div>
-	                                	<p style="font-size: 10px; font-weight:500; color: #455a64;">Ao clicar em Cadastre-se, você concorda com nossos <a href="#" style="color: #69a1ff; font-size: 10px;">Termos, Política de Privacidade</a> e <a href="#" style="color: #69a1ff; font-size: 10px;">Política de Cookies</a>. Você poderá receber notificações por SMS e cancelar isso quando quiser.</p>
+	                                	<p style="font-size: 10px; font-weight:500; color: #455a64;">Ao clicar em Cadastre-se, você concorda com nossos <span class="policy-privacity" style="color: #69a1ff; font-size: 10px; cursor: pointer;">Termos, Política de Privacidade e Política de Cookies</span>. Você poderá receber notificações por SMS e cancelar isso quando quiser.</p>
 	                                </div>
                             </div>
                         </div>
@@ -217,6 +217,26 @@
 	      </div>
 	      <div class="modal-footer">
 	        <a href="<%= request.getContextPath()%>/index.jsp" class="btn btn-primary">Fazer login</a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Modal da política de privacidade e cookies -->
+	<div class="modal fade" id="privacy-policy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	      	<h2 class="modal-title" id="exampleModalLabel"><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body text-justify">
+	        <jsp:include page="/structure-pages/privacy-policy.jsp"></jsp:include>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 	      </div>
 	    </div>
 	  </div>
