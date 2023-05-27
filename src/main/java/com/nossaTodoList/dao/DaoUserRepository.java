@@ -3,6 +3,7 @@ package com.nossaTodoList.dao;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.nossaTodoList.db.DB;
@@ -14,6 +15,7 @@ public class DaoUserRepository implements Serializable {
 
 	private static Connection conn = DB.getConnection();
 
+	// DAO inserção de usuário
 	public boolean insertUser(User obj) {
 		PreparedStatement st = null;
 		try {
@@ -40,4 +42,34 @@ public class DaoUserRepository implements Serializable {
 		return false;
 	}
 
+	// DAO busca de usuário
+	public User findUserByEmailAndPassword(User obj) {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			st = conn.prepareStatement("SELECT * FROM model_user WHERE email = ? AND password = ?");
+			st.setString(1, obj.getEmail());
+			st.setString(2, obj.getPassword());
+			
+			rs = st.executeQuery();
+			
+			if(rs.next()) {
+				User user = new User();
+				user.setId(rs.getLong("id"));
+				user.setName(rs.getString("name"));
+				user.setLastName(rs.getString("lastname"));
+				user.setBirthDate(rs.getString("birthdate"));
+				user.setGender(rs.getString("gender"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				user.setProfile(rs.getString("profile"));
+				
+				return user;
+			}
+		}
+		catch(SQLException e) {
+			throw new DbExceptions("Usuário não encontrado: " + e.getMessage());
+		}
+		return null;
+	}
 }

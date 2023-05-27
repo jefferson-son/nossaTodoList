@@ -3,8 +3,6 @@ package com.nossaTodoList.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-import com.nossaTodoList.model.enums.Profile;
-
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 
@@ -15,13 +13,13 @@ public class User implements Serializable{
 	private String gender;
 	private String email;
 	private String password;
-	private Profile profile;
+	private String profile;
 	
 	public User() {
 	}
 
 	public User(Long id, String name, String lastName, String birthDate, String gender, String email, String password,
-			Profile profile) {
+			String profile) {
 		this.id = id;
 		this.name = name;
 		this.lastName = lastName;
@@ -88,11 +86,11 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public Profile getProfile() {
+	public String getProfile() {
 		return profile;
 	}
 
-	public void setProfile(Profile profile) {
+	public void setProfile(String profile) {
 		this.profile = profile;
 	}
 

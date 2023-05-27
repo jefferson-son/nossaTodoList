@@ -70,7 +70,7 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     
-                        <form class="md-float-material form-material">
+                        <form class="md-float-material form-material" method="POST" action="<%= request.getContextPath()%>/login">
                             <div class="auth-box card" style="box-shadow: 2px 2px 30px #888888;">
                                 <div class="card-block">
                                     <div class="row m-b-20">
