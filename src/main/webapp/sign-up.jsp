@@ -131,7 +131,7 @@
 										  <label class="form-check-label" for="inlineRadio1" style="padding-left: 0px;">Masculino</label>
 										</div>
 										<div class="col-sm-4 col-4">
-										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="other">
+										  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Outro">
 										  <label class="form-check-label" for="inlineRadio1" style="padding-left: 0px;">Outro</label>
 										</div>
                                 	</div>
@@ -213,10 +213,10 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <p class="responseSignUp text-center" style="font-size: 18px;">${msg}</p>
+	        <p class="responseSignUp text-center" style="font-size: 18px;">${succssesSignUp}</p>
 	      </div>
 	      <div class="modal-footer">
-	        <a href="<%= request.getContextPath()%>/login.jsp" class="btn btn-primary">Login</a>
+	        <a href="<%= request.getContextPath()%>/index.jsp" class="btn btn-primary">Fazer login</a>
 	      </div>
 	    </div>
 	  </div>

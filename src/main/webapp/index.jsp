@@ -5,7 +5,6 @@
 <head>
 	<title>Our TodoList - Login</title>
 	<jsp:include page="/structure-pages/structure-head.jsp"></jsp:include>
-	<!--<script type="text/javascript" src="<%=request.getContextPath()%>/assets/inputValidations/login.js" defer></script>-->
 </head>
 
   <body themebg-pattern="theme1">
@@ -92,13 +91,6 @@
                                     </div>
                                     <div class="row m-t-25 text-left">
                                         <div class="col-12">
-                                            <div class="checkbox-fade fade-in-primary d-">
-                                                <label>
-                                                    <input type="checkbox" value="">
-                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                    <span class="text-inverse">Lembre-me</span>
-                                                </label>
-                                            </div>
                                             <div class="forgot-phone text-right f-right">
                                                 <a href="#" class="text-right f-w-600">Esqueceu sua senha?</a>
                                             </div>
@@ -109,6 +101,10 @@
                                             <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Entrar</button>
                                         </div>
                                     </div>
+                                    
+		                            <div class="text-center">
+		                            	<a href="<%= request.getContextPath()%>/sign-up.jsp" class="btn btn-success btn-block">Criar nova conta</a>
+		                            </div>
                                 </div>
                             </div>
                         </form>

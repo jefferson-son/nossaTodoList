@@ -140,6 +140,7 @@ inputPassword.addEventListener('blur', () => {
 		valitedLength = false;
 	}
 	
+	
 	if(upperCharacter.test(inputPassword.value)){
 		let validUpperCharacter = document.querySelector('.upper-case');
 		validUpperCharacter.style.color = 'green';

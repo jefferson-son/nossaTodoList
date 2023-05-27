@@ -48,7 +48,7 @@ public class ServletSignUpController extends HttpServlet {
 			DaoUserRepository userDao = new DaoUserRepository();
 			userDao.insertUser(user);
 			
-			request.setAttribute("msg", "Cadastro realizado com sucesso!");
+			request.setAttribute("succssesSignUp", "Cadastro realizado com sucesso!");
 			request.getRequestDispatcher("/sign-up.jsp").forward(request, response);
 		}
 		
